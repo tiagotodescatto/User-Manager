@@ -1,5 +1,6 @@
-import { Controller, Delete, Get, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { AppService } from './users.service';
+import { UserDto } from './user.dto';
 
 @Controller('users')
 export class AppController {
@@ -13,25 +14,25 @@ export class AppController {
 
   // GET /users/:id
   @Get(':id')
-  getByID(){
+  getByID(@Param('id') id: string){
 
   }
 
   // POST /users/
   @Post()
-  createUser(){
-
+  createUser(@Body() body: UserDto){
+    
   }
   
   // PATCH /users/:id
   @Patch(':id')
-  updateUser(){
+  updateUser(@Param('id') id: string, @Body() body: UserDto){
 
   }
 
   // DELETE /users/:id
   @Delete(':id')
-  deleteUser(){
+  deleteUser(@Param('id') id: string){
 
   }
 }
