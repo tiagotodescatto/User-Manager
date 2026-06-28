@@ -1,12 +1,37 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Delete, Get, Patch, Post } from '@nestjs/common';
 import { AppService } from './users.service';
 
-@Controller()
+@Controller('users')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  // GET /users/
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getAllUsers(){
+
+  }
+
+  // GET /users/:id
+  @Get(':id')
+  getByID(){
+
+  }
+
+  // POST /users/
+  @Post()
+  createUser(){
+
+  }
+  
+  // PATCH /users/:id
+  @Patch(':id')
+  updateUser(){
+
+  }
+
+  // DELETE /users/:id
+  @Delete(':id')
+  deleteUser(){
+
   }
 }
